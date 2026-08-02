@@ -6,7 +6,7 @@ form.addEventListener('submit', async function(e){
     const email = document.querySelector('input[name="email"]').value;
     const password = document.querySelector('input[name="password"]').value;
 
-    const response = await fetch(`http://localhost:3000/api/auth/login`,{ // Login Api
+    const response = await fetch(`/api/auth/login`,{ // Login Api
         method: 'POST',
         credentials: 'include',
         headers:{
@@ -25,7 +25,7 @@ form.addEventListener('submit', async function(e){
         alert('Login successful!');
         localStorage.setItem('isSystemUser', result.systemUser);
         localStorage.setItem('isLoggedIn', 'true');
-        const res = await fetch(`http://localhost:3000/api/account/`,{ // Find Account Api
+        const res = await fetch(`/api/account/`,{ // Find Account Api
         method: 'get',
         credentials: 'include',
         headers:{

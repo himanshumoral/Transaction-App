@@ -7,7 +7,7 @@ form.addEventListener('submit', async function(e) {
     const email = document.querySelector('input[name="email"]').value;
     const password = document.querySelector('input[name="password"]').value;
 
-const response = await fetch(`http://localhost:3000/api/auth/register`,{
+const response = await fetch(`/api/auth/register`,{
     method: 'POST',
     credentials: 'include',
     headers:{
