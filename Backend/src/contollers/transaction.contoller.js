@@ -130,7 +130,7 @@ async function createTransaction(req, res){
 
     // Send email notification to both users --
     
-    await emailService.sendTransactionEmail(req.user.email, req.user.username, amount, toUser);
+    emailService.sendTransactionEmail(req.user.email, req.user.username, amount, toUser);
 
     return res.status(201).json({
         message: 'Transaction completed successfully',
