@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ledger — Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Dashboard.css">
+</head>
+<body>
+    <div class="page">
+        <header class="topbar">
+            <span class="brand-mark">◆ Ledger</span>
+            <button id="logoutBtn">Logout</button>
+        </header>
+
+        <main class="content">
+
+            <section id="checkBalanceCard" class="card balance-card">
+                <p class="eyebrow">Your balance</p>
+                <p id="balanceText" class="balance-amount" style="display: none;"></p>
+                <button id="checkBalanceBtn">Check balance</button>
+            </section>
+
+            <section class="card send-card">
+                <p class="eyebrow">Send money</p>
+                <h2>Transfer</h2>
+
+                <form id="sendMoneyForm">
+                    <label>
+                        <span>Recipient's username</span>
+                        <input type="text" id="toUsername" placeholder="username" required>
+                    </label>
+
+                    <label>
+                        <span>Amount</span>
+                        <input type="number" id="amount" placeholder="0" min="1" required>
+                    </label>
+
+                    <label>
+                        <span>PIN</span>
+                        <input type="password" id="pinInput" placeholder="••••" maxlength="4" inputmode="numeric" pattern="[0-9]{4}" required>
+                    </label>
+
+                    <button type="submit" id="sendMoneyBtn">Send</button>
+                </form>
+
+                <p id="sendStatusMsg" class="status-msg" style="display: none;"></p>
+            </section>
+            <section class="card history-card">
+                <p class="eyebrow">Transaction history</p>
+                <h2>Recent activity</h2>
+
+                <div id="transactionList" class="transaction-list">
+                    <p class="empty-state">Loading...</p>
+                </div>
+            </section>
+            <div id="successModal" class="modal-overlay" style="display: none;">
+            <div class="modal-card">
+            <div class="tick-icon">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                <circle cx="20" cy="20" r="19" stroke="#6EE7A8" stroke-width="2"/>
+                <path d="M12 20l5.5 5.5L28 14" stroke="#6EE7A8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+             </div>
+
+        <h2>Transaction successful</h2>
+
+        <div class="modal-details">
+            <div class="detail-row">
+                <span class="detail-label">Sent to</span>
+                <span class="detail-value" id="modalUsername"></span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Amount</span>
+                <span class="detail-value" id="modalAmount"></span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Transaction ID</span>
+                <span class="detail-value mono" id="modalTxnId"></span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Time</span>
+                <span class="detail-value" id="modalTime"></span>
+            </div>
+        </div>
+
+        <button id="closeModalBtn">Done</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+<script src="Dashboard.js"></script>
+</body>
+</html>

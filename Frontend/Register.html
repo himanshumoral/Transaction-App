@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ledger — Register</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Register.css">
+</head>
+<body>
+    <div class="page">
+        <aside class="brand">
+            <div class="brand-content">
+                <span class="brand-mark">◆ Ledger</span>
+                <h1>Every entry counted twice.</h1>
+                <p>No transaction leaves this system unbalanced — that's the whole point of double-entry.</p>
+            </div>
+            <div class="ticker" aria-hidden="true">
+                <div class="ticker-track">DEBIT&nbsp;&nbsp;·&nbsp;&nbsp;CREDIT&nbsp;&nbsp;·&nbsp;&nbsp;DEBIT&nbsp;&nbsp;·&nbsp;&nbsp;CREDIT&nbsp;&nbsp;·&nbsp;&nbsp;DEBIT&nbsp;&nbsp;·&nbsp;&nbsp;CREDIT&nbsp;&nbsp;·&nbsp;&nbsp;DEBIT&nbsp;&nbsp;·&nbsp;&nbsp;CREDIT&nbsp;&nbsp;·&nbsp;&nbsp;DEBIT&nbsp;&nbsp;·&nbsp;&nbsp;CREDIT&nbsp;&nbsp;·&nbsp;&nbsp;DEBIT&nbsp;&nbsp;·&nbsp;&nbsp;CREDIT&nbsp;&nbsp;·&nbsp;&nbsp;</div>
+            </div>
+        </aside>
+
+        <main class="form-panel">
+            <div class="form-card">
+                <p class="eyebrow">New account</p>
+                <h2>Register</h2>
+
+                <form action="/register" method="post">
+                    <label>
+                        <span>Username</span>
+                        <input type="text" name="username" placeholder="yourname" required>
+                    </label>
+
+                    <label>
+                        <span>Email</span>
+                        <input type="email" name="email" placeholder="you@example.com" required>
+                    </label>
+
+                    <label>
+                        <span>Password</span>
+                        <input type="password" name="password" placeholder="••••••••" required>
+                    </label>
+
+                    <button type="submit">Create account</button>
+                </form>
+
+                <p class="switch">Already have an account? <a href="/login.html">Sign in</a></p>
+            </div>
+        </main>
+    </div>
+
+<script src="Register.js"></script>
+</body>
+</html>

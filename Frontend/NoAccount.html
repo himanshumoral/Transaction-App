@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ledger — No Account</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="NoAccount.css">
+</head>
+<body>
+    <div class="page">
+        <div class="card">
+            <span class="brand-mark">◆ Ledger</span>
+
+            <div class="empty-icon" aria-hidden="true">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                    <rect x="6" y="14" width="36" height="26" rx="3" stroke="#C9A24D" stroke-width="2"/>
+                    <path d="M6 20H42" stroke="#C9A24D" stroke-width="2"/>
+                    <circle cx="14" cy="30" r="2" fill="#C9A24D"/>
+                </svg>
+            </div>
+
+            <h1>No account yet</h1>
+            <p>You'll need an account before you can send or receive money. Takes a few seconds to set up.</p>
+
+            <button id="openPinModalBtn">Create account</button>
+            <p id="statusMsg" class="status-msg" style="display: none;"></p>
+        </div>
+    </div>
+
+    <div id="pinModal" class="modal-overlay" style="display: none;">
+        <div class="modal-card">
+            <p class="eyebrow">Account setup</p>
+            <h2>Set your PIN</h2>
+            <p class="modal-sub">This PIN will be required every time you send money.</p>
+
+            <form id="createAccountForm">
+                <input type="password" id="pinInput" placeholder="••••" maxlength="4" inputmode="numeric" pattern="[0-9]{4}" required>
+                <div class="modal-actions">
+                    <button type="button" id="cancelPinBtn" class="btn-secondary">Cancel</button>
+                    <button type="submit" id="createAccountBtn">Save & continue</button>
+                </div>
+            </form>
+
+            <p id="modalStatusMsg" class="status-msg" style="display: none;"></p>
+        </div>
+    </div>
+
+<script src="NoAccount.js"></script>
+</body>
+</html>

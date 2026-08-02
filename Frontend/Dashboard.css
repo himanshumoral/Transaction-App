@@ -1,0 +1,309 @@
+:root {
+    --paper: #0B0E14;
+    --paper-card: #151A22;
+    --border: #262B35;
+    --ink: #E8E9ED;
+    --ink-soft: #8B92A3;
+    --brass: #C9A24D;
+    --brass-dim: #9C7C3A;
+    --green: #6EE7A8;
+    --blue: #7BB2F9;
+    --red: #F17B7B;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--paper);
+    min-height: 100vh;
+}
+
+.topbar {
+    padding: 24px 40px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topbar button {
+    width: auto;
+    padding: 8px 18px;
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--ink-soft);
+    font-size: 13px;
+}
+
+.topbar button:hover {
+    background: var(--paper-card);
+    color: var(--ink);
+}
+
+.brand-mark {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    color: var(--brass);
+}
+
+.content {
+    max-width: 480px;
+    margin: 48px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card {
+    background: var(--paper-card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 32px;
+}
+
+.eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 8px;
+}
+
+/* ---- Balance card ---- */
+
+.balance-card {
+    text-align: center;
+}
+
+.balance-amount {
+    font-family: 'Fraunces', serif;
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 8px 0 20px;
+}
+
+/* ---- Send money card ---- */
+
+.send-card h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 24px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+label span {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink-soft);
+}
+
+input {
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: #0F1319;
+    color: var(--ink);
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+}
+
+input::placeholder {
+    color: #565D6B;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--brass);
+    box-shadow: 0 0 0 3px rgba(201, 162, 77, 0.15);
+}
+
+button {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 4px;
+    background: var(--brass);
+    color: #14100A;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+button:hover {
+    background: #DBAF5C;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.status-msg {
+    margin-top: 16px;
+    margin-bottom: 0;
+    font-size: 13px;
+    text-align: center;
+}
+
+/* ---- Transaction history ---- */
+
+.transaction-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-top: 20px;
+}
+
+.transaction-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.transaction-item:last-child {
+    border-bottom: none;
+}
+
+.txn-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.txn-username {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink);
+}
+
+.txn-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--ink-soft);
+}
+
+.txn-amount {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.txn-amount.positive {
+    color: var(--green);
+}
+
+.txn-amount.negative {
+    color: var(--blue);
+}
+
+.txn-amount.failed {
+    color: var(--red);
+}
+
+.empty-state {
+    color: var(--ink-soft);
+    font-size: 14px;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* ---- Success Modal ---- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.modal-card {
+    background: var(--paper-card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 36px;
+    width: 100%;
+    max-width: 340px;
+    text-align: center;
+}
+
+.tick-icon {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.modal-card h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 24px;
+}
+
+.modal-details {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.detail-label {
+    font-size: 13px;
+    color: var(--ink-soft);
+}
+
+.detail-value {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink);
+    text-align: right;
+}
+
+.detail-value.mono {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+}

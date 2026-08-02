@@ -1,0 +1,176 @@
+:root {
+    --paper: #0B0E14;
+    --paper-card: #151A22;
+    --border: #262B35;
+    --ink: #E8E9ED;
+    --ink-soft: #8B92A3;
+    --brass: #C9A24D;
+    --brass-dim: #9C7C3A;
+    --green: #6EE7A8;
+    --blue: #7BB2F9;
+    --red: #F17B7B;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--paper);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    width: 100%;
+    max-width: 380px;
+    background: var(--paper-card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 44px 36px;
+    text-align: center;
+}
+
+.brand-mark {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    color: var(--brass);
+}
+
+.empty-icon {
+    margin: 28px 0 20px;
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 12px;
+}
+
+p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin-bottom: 28px;
+}
+
+button {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 4px;
+    background: var(--brass);
+    color: #14100A;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+button:hover {
+    background: #DBAF5C;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.status-msg {
+    margin-top: 16px;
+    margin-bottom: 0;
+    font-size: 13px;
+}
+
+/* ---- PIN modal ---- */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.modal-card {
+    background: var(--paper-card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 36px;
+    width: 100%;
+    max-width: 340px;
+    text-align: center;
+}
+
+.eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 8px;
+}
+
+.modal-card h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 10px;
+}
+
+.modal-sub {
+    font-size: 13px;
+    margin-bottom: 24px;
+}
+
+#createAccountForm input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: #0F1319;
+    color: var(--ink);
+    font-size: 18px;
+    font-family: 'JetBrains Mono', monospace;
+    text-align: center;
+    letter-spacing: 10px;
+    margin-bottom: 20px;
+}
+
+#createAccountForm input:focus {
+    outline: none;
+    border-color: var(--brass);
+    box-shadow: 0 0 0 3px rgba(201, 162, 77, 0.15);
+}
+
+.modal-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--ink-soft);
+}
+
+.btn-secondary:hover {
+    background: #1B212B;
+    color: var(--ink);
+}
