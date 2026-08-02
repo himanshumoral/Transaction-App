@@ -18,6 +18,10 @@ app.use(cors({
 
 app.use(express.static(path.join(__dirname, '../../Frontend')));
 
+app.get('/', (req, res) => {
+    res.redirect('/login.html');
+});
+
 app.use('/api/auth', authRouter);
 app.use('/api/account', accountRouter);
 app.use('/api/transaction', transactionRouter);
